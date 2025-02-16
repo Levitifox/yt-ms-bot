@@ -9,9 +9,14 @@ from yt_dlp import YoutubeDL
 from ytmusicapi import YTMusic
 from telegram import InlineQueryResultAudio, Update
 from telegram.ext import Application, CommandHandler, InlineQueryHandler, ContextTypes
+from dotenv import load_dotenv
 from pyngrok import ngrok # type: ignore
 
+load_dotenv()
+
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+if not TELEGRAM_BOT_TOKEN:
+    raise ValueError("No TELEGRAM_BOT_TOKEN provided in the environment!")
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)

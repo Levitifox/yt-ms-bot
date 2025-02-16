@@ -75,7 +75,7 @@ A Telegram inline bot that lets you search for and share tracks from YouTube Mus
 To start the bot, simply run:
 
 ```bash
-python yt_ms_bot.py
+python yt-ms-bot.py
 ```
 
 This will:
